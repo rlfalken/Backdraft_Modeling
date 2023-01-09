@@ -1,0 +1,159 @@
+\documentclass[12pt,letterpaper]{article}
+
+%==================================================================================
+% Template for the 13th International Association of Fire Safety Science (2019).  
+%==================================================================================
+
+% This template is based on the layout requirements of the Fire Safety Journal.  When submitting, please do include the *.tex and output (typeset) *.pdf files, figure files (photographs, diagrams, etc.), and any other ancillary files required to typeset your article.  The journal must be able to typeset your article with what you've provided.
+
+% As with any programming language, there are multiple ways of executing any given task (e.g., figures, tables, maths, etc.).  The syntax in this template should be considered suggestions and not directives.  Please feel free to use your own favorite syntax, especially if it's more elegant than what is found below!  That said, the spacing and font parameters have been selected to conform to the appearance dictated by the journal (i.e. like MS Word).  Make sure your final typeset document has the correct formatting or it will be rejected.
+
+% Required Packages ===============================================================
+\usepackage{amsmath} % The usual maths package
+\usepackage{amsfonts}  % The usual maths package
+\usepackage{amssymb}  % The usual maths package
+\usepackage[final]{graphicx} %Required for figures.
+\usepackage{caption} % Needed to modify default figure captions
+\usepackage{latexsym}
+\usepackage{lineno} % Enables line numbers
+\usepackage{parskip} % Makes a space between paragraphs like MS word
+\usepackage{fullpage} % Overrides article margins
+\usepackage{titlesec} % Enables modification of section labels
+\usepackage[numbib]{tocbibind} %Make References a numbered section
+\usepackage{siunitx} % Formats the units and values
+\usepackage{times}
+\usepackage{chemformula}
+
+
+%\usepackage{subcaption} % Enables multiple images in one figure environment
+%\usepackage{xcolor} % For various font colors in figures
+%===================================================================================
+
+% The next two lines modify the font and font size of the section and subsection labels
+\titleformat{\section}{\normalfont\bfseries}{\thesection}{0.2em.}{}
+\titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{0.2em}{}
+
+% This will change the figure captions from the default "Figure 1:" to "Fig. 1."
+\captionsetup[figure]{labelformat={default},labelsep=period,name={Fig.}}
+
+\linenumbers % Include line numbers throughout document
+
+\begin{document} %====================================================================
+\begin{flushleft} % Suppress the default full justification of text
+
+% Title of your article
+\textbf{}
+\vspace{3mm}\\
+%
+% Author(s)
+Marcos Vanella$^\text{a*}$ and Ryan Falkenstein-Smith$^\text{a}$
+\vspace{3mm}\\	
+
+% Affiliation "b"
+$^\text{a}$National Institute of Standards and Technology, 100 Bureau Drive, MS 8661, Gaithersburg, USA  \\
+marcos.vanella@nist.gov
+\vspace{3mm}
+
+$^*$Corresponding author
+
+% Highlights/keywords ===================================================
+\textbf{Highlights:}	
+\begin{itemize}
+	\itemsep-4pt % Override default vertical spacing among list items
+	\item Three to five bullet points
+	\item Each to have a maximum of 85 characters, including spaces
+	\item Cover main findings
+	\item Usually submitted separately
+\end{itemize}
+\vspace{3mm}
+
+% Abstract ==============================================================	
+\textbf{Abstract:}
+\vspace{3mm}
+
+
+\textbf{Keywords:}
+
+Keyword 1; Keyword 2; Keyword 3; Keyword 4; 
+
+\section{Introduction}
+
+\section{Experimental Methods}
+
+\section{Results}
+
+\section{Conclusions}
+
+\section*{References}
+\bibliographystyle{elsarticle-num}
+\bibliography{References}
+	
+%\begin{thebibliography}{9}
+%	\bibitem{fleischmann2013defining}
+%	C.M. Fleischmann and Z. Chen, 
+%	``Defining the difference between backdraft and smoke explosions,'' 
+%	Procedia Engineering,
+%	vol. 62, pp. 324--330, 2013.
+%	
+%	\bibitem{guigay2009use}
+%	G. Guigay, D. Gojkovic, L.G. Bengtsson, B. Karlsson, and J. Eliasson,
+%	``The use of CFD calculations to evaluate fire-fighting tactics in a possible backdraft situation,''
+%	Fire Technology,
+%	vol. 45, no. 3, pp. 287--311, 2009.
+%	
+%	\bibitem{gojkovic2000initial}
+%	D. Gojkovic
+%	``Initial backdraft experiments,'' 
+%	Technical Report 3121 
+%	Lund University,
+%	2000.
+%
+%	\bibitem{tsai2013full}
+%	L.C. Tsai and C.W. Chiu,
+%	``Full-scale experimental studies for backdraft using solid materials,''
+%	Process Safety and Environmental Protection,
+%	vol. 91, no. 3, pp. 202--212, 2013.	
+%	
+%	\bibitem{Parkes2009}
+%	A.R. Parkes
+%	''The Impact of Size and Location of Pool Fires on Compartment Fire Behaviour,''
+	
+	
+	%\bibitem{quintiere_2017}
+	%J. G. Quintiere, 
+	%Principles of Fire Behavior, 
+	%2nd edition, 
+	%CRC Press, 
+	%2017.
+	
+	%\bibitem{williams_1969}
+	%F. Williams, 
+	%``Scaling mass fires,'' 
+	%in Fire Research Abstracts and Reviews, 
+	%vol. 11, pp. 1-23, 1969.
+		
+	%\bibitem{emori_1982}
+	%R. I. Emori and 
+	%K. Saito, 
+	%"Model experiment of hazardous forest fire whirl," 
+	%Fire Technology, 
+	%vol. 18, no. 4, pp. 319-327, 1982.
+	
+	%\bibitem{fsj_2019}
+	%Fire Safety Journal,
+	%Guide for Authors,
+	%https://www.elsevier.com/journals/fire-safety-journal/0379-7112/guide-for-authors,
+	%2019
+	%(accessed 21 March 2019).
+	
+%\end{thebibliography}	
+
+\newpage %The figure captions section must be on a separate page.
+\section*{Figure captions}
+Fig. 1. Figure captions should concisely describe the image.
+
+%Fig. 2. Example caption for figure 2.
+
+%Fig. 3. Example caption for figure 3.
+\end{flushleft}
+\end{document}
