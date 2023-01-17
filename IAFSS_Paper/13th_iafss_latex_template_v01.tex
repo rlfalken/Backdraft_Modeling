@@ -42,7 +42,7 @@
 \begin{flushleft} % Suppress the default full justification of text
 
 % Title of your article
-\textbf{}
+\textbf{Backdraft: Exeriments and Large Eddy Simulations in a scaled compartment}
 \vspace{3mm}\\
 %
 % Author(s)
@@ -70,21 +70,109 @@ $^*$Corresponding author
 % Abstract ==============================================================	
 \textbf{Abstract:}
 \vspace{3mm}
-
+An extensive set of backdraft experiments has been performed at the NIST National Fire Research Laboratory. These experiments were conducted in a 2/5 scale ASTM standard compartment and are part of an effort the define the conditions at which backdraft can arise. Also, the detailed chemistry and heat measurements are intended to evaluate computer code fire models. In this article we describe the modeling effort employing the Fire Dynamics Simulator (FDS) in a set of simulations involving different fuels and ingnition source locations mirroring a subset of the named experiments. We focus in the use of default simulation parameters and their effect on the backdraft outcomes. In particular it is noted that the temperature threshold of the ignition model plays a primary role in the development of backdraft.
 
 \textbf{Keywords:}
 
-Keyword 1; Keyword 2; Keyword 3; Keyword 4; 
+Backdraft; Fire Simulation; FDS; Large Eddy Simulation; 
 
 \section{Introduction}
 
-\section{Experimental Methods}
+\text{Backdraft:} What is it, why important? Motivation.
 
-My method.
+\textbf{Ryan:} Comment on backdraft experimental literature.
 
-\section{Results}
+\textbf{Fleischmann and others* (1990s):}
+	- Described the physical mechanism for Backdraft. Measured gravity current, thermal and species concentrations in lab.
+
+\textbf{Gottuk and others X (1997):}
+- Real scale backdraft experiments on steel compartments. Gottuk : define values of the fuel mass fraction in the vitiated atmosphere of the compartment that would leave to backdraft, fuel in naval ships.
+
+\textbf{Weng and Fan (2003):} critical unburnt mass fraction for methane.
+
+\textbf{Hayasaka and others+ (2008):} Pyrolyzate from internal wooden walls, wood cribs.
+
+\textbf{Wu and others # (2011):} The effects of varying ventilation conditions, ignition locations, and mass fluxes of gas leakage are studied. The effect of the gas fire backdraft phenomenon on the temperature of the compartment is analyzed. The experimental results and the analysis show that the smaller the opening is, the further the ignition position is away from the center of the compartment and the larger the mass flux of gas leakage is, the more easily the gas fire backdraft is produced. 
+
+
+\textbf{Tsai and Chiu = (2013)} experiments involved three full-scale room fire tests that used solid furnishing, loveseats. Pyrolyzates took much longer to produce backdraft after door was opened resp to what was seen with natural gas.
+
+\textbf{Zhao and others (2021).}
+
+
+\textbf{Falkenstein-Smith R. and Cleary Thomas (2022):} Over 500 tests varying the type of fuel, fuel load, door window geometry, spark location in compartment. Temperature, species composition, in several probes within the compartment, heat flux probes in-outside of compartment, HRR from oxygen consumption calorimetry.
+
+
+*Fleischmann C.M., “Backdraft Phenomena,” PhD Thesis, U.C. Berkeley, 1993.
+
+X Gottuk D.T. et. al., “The Development and Mitigation of Backdrafts : A full scale experimental study,” Fire Safey Science, Proc. Of 5th Natl. Symposium, pp 935-946, 1997. 
+
+O Weng W.G. and Fan W.C., “Critical condition of backdraft in compartment fires : a reduced scale experimental study,” J. Loss Prev. Proc. Industries 16, pp 19-26, 2003.
+
++ Hayasaka et al., “Backdraft Experiments in a small compartment,” Progress in Scale modeling, Springer, pp 313-324, 2008.
+
+# Wu J. et al., “Experimental research on gas backdraft phenomenon,” Procedia Env. Sci. 11, pp 1542-1549, 2011.
+
+= Tsai L.C. and Chiu C.W., “Full-scale experimental studies for backdraft using solid materials,” Proc. Safety and Env Protection 91:3, pp 202-212, 2013.
+
+~ Zhao J. et al., “Experimental study on the backdraft phenomenon of solid fuel,” PLoS ONE 16(8), 2021.
+
+Falkenstein-Smith R. and Cleary Thomas, “Thermal and gas mixture composition preceding backdrafts in a 2/5th scale compartment,” NIST Technical Note, September 2022
+
+
+\textbf{Marcos: FDS simulation of Backdraft in the literature}
+
+\textbf{Weng, Fan and Hasemi* (2005):}
+Comparatively use simulations to study compartment geometry/bcs in gravity current to predict time of ignition of backdraft.
+
+
+\textbf{Ferraris and others X (2008):}
+Used a subgrid scale model based on mixture fraction progress variable to define partially premixed combustion applied to backdraft. Qualitative results.
+
+
+\textbf{Park and others O (2017):} Park, Bo Oh, Shik Han, Hyung Do: Effects of initial fuel mass in backdraft, finite chemistry (one and three step reaction).
+
+
+\textbf{Myilsamy and others + (2019):} Myilsamy and others: Mixing controlled fast chemistry. Studied effect of opening geometry in the critical fuel fraction was studied.
+
+
+\textbf{Ashok and Echekki # (2021):} Ashok and Echekki: study the effect of gravity magnitude on backdraft events. 
+
+*Weng W.G. et al., “Prediction of the formation of backdraft in a compartment based on large eddy simulation,” Engineering Computations, Vol. 22 No. 4, pp. 376-392 (2005).
+
+X Ferraris S.A. et al., “Large eddy simulation of the backdraft phenomenon,” Fire Safety Journal 43:3, pp. 205-225 (2008).
+
+O Park J.W. et. Al, “Computational study of backdraft dynamics and the effects of initial conditions in the compartment,” J. Mech. Sci. and Tech. 31:2, pp. 985-993 (2017).
+
++ Myilsamy D. et al., “Large eddy simulation of the backdraft dynamics in compartments with different opening geometries,” J. Mech. Sci. and Tech. 33:5, pp. 2189-2201 (2019).
+
+# Ashok S.G. and Echekki T., “A numerical study of backdraft phenomena under normal and reduced gravity,” Fire Safety Journal 121 103270 (2021).
+
+
+\textbf{What are we trying to do here?} Leverage the wealth of experimental data produced to assess the FDS default LES combusiton models in this challenging problem.  EDC -> Extra Extinction and re-ignition models arise, their issues and advantages. 
+
+\textbf{Short description of the sections of the paper.}
+
+\section{Experimental Method : Definition of compartment initial conditions}
+
+\textbf{Ryan:} compartment description (some figure), data sampled in experiments, experiments used and procedure defined to extract initial conditions for simulations.
+
+\section{Numerical Method and Model setup}
+
+\textbf{LES with Eddy dissipation concept, ignition and extinction, FDS numerics  LES vs VLES, model setup in Validation, chemistry, default parameters, geometry, grids.}
+
+\section{Effect of Ignition Threshold}
+
+\textbf{Re-ignition model:} History, options : Large value, AIT, tune it in this case. How do we do it?
+
+\section{Backdraft simulation results}
+
+\textbf{Backdraft probabilities, explanation, some physics results.}
+
 
 \section{Conclusions}
+
+\textbf{- Very challenging problem for fast chemistry calculations. - Ignition needs to be tuned. Comment on incorporating subgrid temperature fluctuations into the model. - Physics comparisons on selected cases, etc.}
 
 \section*{References}
 \bibliographystyle{elsarticle-num}
