@@ -46,7 +46,7 @@
 \vspace{3mm}\\
 %
 % Author(s)
-Marcos Vanella$^\text{a*}$ and Ryan Falkenstein-Smith$^\text{a}$
+Marcos Vanella$^\text{a*}$, Ryan Falkenstein-Smith$^\text{a}$, and Thomas Cleary$^\text{a}$
 \vspace{3mm}\\	
 
 % Affiliation "b"
@@ -77,50 +77,13 @@ An extensive set of backdraft experiments has been performed at the NIST Nationa
 Backdraft; Fire Simulation; FDS; Large Eddy Simulation; 
 
 \section{Introduction}
+Backdrafts pose a life-threatening risk to any firefighter that may encounter them. A backdraft is a deflagration resulting from igniting an incoming gravity current of air mixed with a heated, fuel-rich, and oxygen-depleted environment~\cite{fleischmann2013defining}. Several experimental works have identified the physical mechanisms and conditions conducive to backdrafts. Fleischmann examined the thermal and gas compositions within an enclosure's environment influencing the incoming gravity current~\cite{fleischmann1993backdraft,fleischmann1994quantitative}. Gottuk and others estimated critical mass fractions in vitiated atmospheres that result in backdraft on a full scale using steel compartments. Wu et al. established a correlation between the likelihood of backdraft and compartment configuration by varying ventilation conditions, ignition locations, and mass fluxes of gas leakage~\cite{wu2011experimental}. Other works have studied the probability of backdraft generated from solid fuel combustion within an enclosure~\cite{hayasaka2008backdraft,tsai2013full,zhao2021experimental}.
 
-\text{Backdraft:} What is it, why important? Motivation.
+%\textbf{Falkenstein-Smith R. and Cleary Thomas (2022):} Over 500 tests varying the type of fuel, fuel load, door window geometry, spark location in compartment. Temperature, species composition, in several probes within the compartment, heat flux probes in-outside of compartment, HRR from oxygen consumption calorimetry.
 
-\textbf{Ryan:} Comment on backdraft experimental literature.
+%Falkenstein-Smith R. and Cleary Thomas, “Thermal and gas mixture composition preceding backdrafts in a 2/5th scale compartment,” NIST Technical Note, September 2022
 
-\textbf{Fleischmann and others* (1990s):}
-	- Described the physical mechanism for Backdraft. Measured gravity current, thermal and species concentrations in lab.
-
-\textbf{Gottuk and others X (1997):}
-- Real scale backdraft experiments on steel compartments. Gottuk : define values of the fuel mass fraction in the vitiated atmosphere of the compartment that would leave to backdraft, fuel in naval ships.
-
-\textbf{Weng and Fan (2003):} critical unburnt mass fraction for methane.
-
-\textbf{Hayasaka and others+ (2008):} Pyrolyzate from internal wooden walls, wood cribs.
-
-\textbf{Wu and others # (2011):} The effects of varying ventilation conditions, ignition locations, and mass fluxes of gas leakage are studied. The effect of the gas fire backdraft phenomenon on the temperature of the compartment is analyzed. The experimental results and the analysis show that the smaller the opening is, the further the ignition position is away from the center of the compartment and the larger the mass flux of gas leakage is, the more easily the gas fire backdraft is produced. 
-
-
-\textbf{Tsai and Chiu = (2013)} experiments involved three full-scale room fire tests that used solid furnishing, loveseats. Pyrolyzates took much longer to produce backdraft after door was opened resp to what was seen with natural gas.
-
-\textbf{Zhao and others (2021).}
-
-
-\textbf{Falkenstein-Smith R. and Cleary Thomas (2022):} Over 500 tests varying the type of fuel, fuel load, door window geometry, spark location in compartment. Temperature, species composition, in several probes within the compartment, heat flux probes in-outside of compartment, HRR from oxygen consumption calorimetry.
-
-
-*Fleischmann C.M., “Backdraft Phenomena,” PhD Thesis, U.C. Berkeley, 1993.
-
-X Gottuk D.T. et. al., “The Development and Mitigation of Backdrafts : A full scale experimental study,” Fire Safey Science, Proc. Of 5th Natl. Symposium, pp 935-946, 1997. 
-
-O Weng W.G. and Fan W.C., “Critical condition of backdraft in compartment fires : a reduced scale experimental study,” J. Loss Prev. Proc. Industries 16, pp 19-26, 2003.
-
-+ Hayasaka et al., “Backdraft Experiments in a small compartment,” Progress in Scale modeling, Springer, pp 313-324, 2008.
-
-# Wu J. et al., “Experimental research on gas backdraft phenomenon,” Procedia Env. Sci. 11, pp 1542-1549, 2011.
-
-= Tsai L.C. and Chiu C.W., “Full-scale experimental studies for backdraft using solid materials,” Proc. Safety and Env Protection 91:3, pp 202-212, 2013.
-
-~ Zhao J. et al., “Experimental study on the backdraft phenomenon of solid fuel,” PLoS ONE 16(8), 2021.
-
-Falkenstein-Smith R. and Cleary Thomas, “Thermal and gas mixture composition preceding backdrafts in a 2/5th scale compartment,” NIST Technical Note, September 2022
-
-
-\textbf{Marcos: FDS simulation of Backdraft in the literature}
+Other works have relied on computational models to study backdraft. \textbf{Marcos: FDS simulation of Backdraft in the literature}
 
 \textbf{Weng, Fan and Hasemi* (2005):}
 Comparatively use simulations to study compartment geometry/bcs in gravity current to predict time of ignition of backdraft.
@@ -149,23 +112,51 @@ O Park J.W. et. Al, “Computational study of backdraft dynamics and the effects
 # Ashok S.G. and Echekki T., “A numerical study of backdraft phenomena under normal and reduced gravity,” Fire Safety Journal 121 103270 (2021).
 
 
-\textbf{What are we trying to do here?} Leverage the wealth of experimental data produced to assess the FDS default LES combusiton models in this challenging problem.  EDC -> Extra Extinction and re-ignition models arise, their issues and advantages. 
+\textbf{What are we trying to do here?} Leverage the wealth of experimental data produced to assess the FDS default LES combusiton models in this challenging problem.  EDC -> Extra Extinction and re-ignition models arise their issues and advantages. 
+
+Recently, an extensive series of 500 experiments, focused on examining backdraft in a reduced-scale enclosure, was performed at the NIST National Fire Research Laboratory~\cite{Falkenstein2022}. The experimental series generated a significant dataset that identifies environmental conditions indicative of backdraft.  
 
 \textbf{Short description of the sections of the paper.}
 
-\section{Experimental Method : Definition of compartment initial conditions}
-A schematic of the 1~m~by~1~m~by~1.5~m reduced-scale enclosure used for all experiments is provided in Fig.~\ref{}. The enclosure was designed to scale, 2/5\textsuperscript{th} the dimensions of an ASTM test room. Experiments were initiated when a square sand burner, with a 17.8~cm side length, was ignited. In these experiments, the sand burner's center was approximately 0.5~m from either side wall and 1.25~m from the front opening. After the initial ignition, the fire size increased to a predetermined heat release rate and was allowed to burn with the compartment door open for 60.0~s. Afterward, the door was shut. While the doorway was closed, fuel continued to flow through the burner for a predetermined duration, and when reached, the flow was zeroed. The fuel flow durations used in this work are shown in Table~\ref{}, corresponding to their respective fuel flow times. The compartment remained closed for an additional 30.0~s after the fuel flow duration to allow the internal gases to mix. Once the door opened, spark ignitors were prompted to arc, providing a potential ignition source for the residing fuel and incoming gravity current of air. 
+\section{Experimental Method: Definition of compartment initial conditions}
+A schematic of the 1~m~by~1~m~by~1.5~m reduced-scale enclosure used for all experiments is provided in Fig.~\ref{fig:Backdraft_experimental_setup}. The enclosure was designed to scale, 2/5\textsuperscript{th} the dimensions of an ASTM test room. Experiments were initiated when a square sand burner, with a 17.8~cm side length, was ignited. In these experiments, the sand burner's center was approximately 0.5~m from either side wall and 1.25~m from the front opening. After the initial ignition, the fire size increased to a predetermined heat release rate and was allowed to burn with the compartment door open for 60.0~s. Afterward, the door was shut. While the doorway was closed, fuel continued to flow through the burner for a predetermined duration, and when reached, the flow was zeroed. The fuel flow durations used in this work are shown in Table~\ref{tab:Fuel_Flow_Time}, corresponding to their respective fuel flow times. The compartment remained closed for an additional 30.0~s after the fuel flow duration to allow the internal gases to mix. Once the door opened, spark ignitors were prompted to arc, providing a potential ignition source for the residing fuel and incoming gravity current of air.
+\begin{figure}[!]
+	\centering
+\includegraphics[width=16.0cm, keepaspectratio]{Experimental_Setup_6.png}
+	\caption{Schematic of the $2/5^{\rm{th}}$ scale compartment used in backdraft experiments}
+	\label{fig:Backdraft_experimental_setup}
+\end{figure}
 
-The locations of the spark ignitors, thermocouples, and gas sampling locations are displayed in Fig.~\ref{}. The spark ignitors were positioned either 25.4~cm ("low spark") or 50.7~cm ("mid spark") from the compartment floor. Thermocouples were incorporated on both side walls of the compartment in two different configurations. The first thermocouple configuration used 49.5 cm long, 0.3175 cm diameter sheathed Type K thermocouples configured in a rectangular orientation on the left wall facing the door. The second thermocouple array included four 24.8 cm long, 0.3175 cm diameter sheathed Type K thermocouples configured in a line on the right wall facing the door spaced approximately 19.9 cm apart. Gas samples were portioned and analyzed into two gas analyzers and phi meters at one of three location pairs displayed in Fig.~\ref{}. The gas analyzer included one paramagnetic and two nondispersive infrared sensors to measure oxygen, carbon dioxide, and carbon monoxide. The phi meter~\cite{} provided equivalence ratio measurements of the extracted gas sample. A combination of the gas analyzer and phi meter measurements was used to estimate the concentration of major species on a wet basis. Major gas species included methane/propane, oxygen, carbon dioxide, carbon monoxide, water vapor, and nitrogen. Gas and temperature measurements were monitored using a data acquisition system sampling 1.0~Hz during each experiment.
+\begin{table}[h!]
+\caption{List of fuel flow times for each fire configuration}
+\label{tab:Fuel_Flow_Time}
+\centering
+	\footnotesize
+	\begin{tabular}{c c l}
+\hline
+Fuel & Fire size~(kW)	& Fuel flow time~(s)  \\
+\hline
+Methane & 25.0~$\pm$~1.0~kW 	& 360,~390,~450\\
+	& 37.5~$\pm$~1.0~kW 	& 225,~285      \\
+%[0.075cm]
+Propane & 16.7~$\pm$~1.0~kW		& 255,~270,~315	\\
+	& 25.0~$\pm$~1.0~kW 	& 210,~285		 \\
+\hline
+\end{tabular}
+\end{table}
+
+The locations of the spark ignitors, thermocouples, and gas sampling locations are displayed in Fig.~\ref{fig:Backdraft_experimental_setup}. The spark ignitors were positioned either 25.4~cm ("low spark") or 50.7~cm ("mid spark") from the compartment floor. Thermocouples were incorporated on both side walls of the compartment in two different configurations. The first thermocouple configuration used 49.5 cm long, 0.3175 cm diameter sheathed Type K thermocouples configured in a rectangular orientation on the left wall facing the door. The second thermocouple array included four 24.8 cm long, 0.3175 cm diameter sheathed Type K thermocouples configured in a line on the right wall facing the door spaced approximately 19.9 cm apart. Gas samples were portioned and analyzed into two gas analyzers and phi meters at one of three location pairs displayed in Fig.~\ref{fig:Backdraft_experimental_setup}. The gas analyzer included one paramagnetic and two nondispersive infrared sensors to measure oxygen, carbon dioxide, and carbon monoxide. The phi meter~\cite{babrauskas1994phi,Falkenstein2021a} provided equivalence ratio measurements of the extracted gas sample. A combination of the gas analyzer and phi meter measurements was used to estimate the concentration of major species on a wet basis. Major gas species included methane/propane, oxygen, carbon dioxide, carbon monoxide, water vapor, and nitrogen. Gas and temperature measurements were monitored using a data acquisition system sampling 1.0~Hz during each experiment.
 
 Initial conditions for backdraft models were determined in two-compartment zones from an averaged time-averaged temperature and estimated gas concentration measurements of repeated experiments with the same fuel flow duration and fire size. Zones were divided at the height of 40.0 cm from the species concentration measurements observed to be fairly homogeneous. Time-averaged measurements were calculated from a 10.0~s time domain immediately before the compartment doorway opening. The uncertainty of the initial conditions was determined from a combination of the Type A and B evaluation of uncertainty. The Type A evaluation of uncertainty was estimated from the variance of the averaged measurements. The Type B evaluation of uncertainty was determined from the reported instrumentation error. The variance between the averaged measurements was determined to be the dominant contributor to the estimated uncertainty.
-Backdraft intensity was estimated from the total heat release of the exiting flame. The compartment was placed under a canopy hood with a 3~MW calorimetry measurement system during each experiment. In this instance, carbon dioxide generation calorimetry with a correction for carbon monoxide generation was implemented to account for unburned fuel exiting the compartment. 
 
-
-
-
-
-The doorway remained shut for a 
+Backdraft intensity was estimated from the total heat release of the exiting flame. During each experiment, the compartment was placed under a canopy hood with a 3.0~MW calorimetry measurement system. In this instance, the heat release rate was estimated using carbon dioxide generation calorimetry with a correction for carbon monoxide generation to account for unburned fuel exiting the compartment. The total heat release was calculated using Eq.~\ref{eq:total_heat_release_corr}:
+\begin{equation}
+\begin{split}
+\label{eq:total_heat_release_corr}
+THR&=\sum_{t=0}^{\infty} \left[ \dot{m}_{\rm{CO_2}}(t)\left(\frac{\rm{LHV_F}~\rm{MW_F}}{\rm{x}~\rm{MW_{CO_2}}}\right)+\dot{m}_{\rm{CO}}(t)\left(\frac{\rm{LHV_F}~\rm{MW_F}}{\rm{x}~\rm{MW_{CO}}}-\Delta\rm{H}^{\rm{o}}_{C,CO}\right) \right] \Delta~t
+\end{split}
+\end{equation}
+Here, $\dot{m}_{\rm{CO_2}}(t)$ and $\dot{m}_{\rm{CO}}(t)$ represent the mass flow rate of \ch{CO2} and \ch{CO} measured in the duct, respectively. The number of carbon atoms and lower heating value of the parent fuel are represented by $\rm{x}$ and $\rm{LHV_F}$, respectively. The molecular weight of the parent fuel, carbon dioxide, and carbon monoxide is denoted as $\rm{MW_F}$, $\rm{MW_{CO_2}}$, and $\rm{MW_{CO}}$, respectively. The heat of combustion for carbon monoxide, $\Delta \rm{H}^{\rm{o}}_{C,CO}$ used in Eq.~\ref{eq:total_heat_release_corr} was 10.10~kJ/g as reported by Ref.~\cite{Hurley2016}. The heat released from the combustion gases trapped in the compartment before opening the door is subtracted from the measured total heat released for a backdraft.
 
 \section{Numerical Method and Model setup}
 
