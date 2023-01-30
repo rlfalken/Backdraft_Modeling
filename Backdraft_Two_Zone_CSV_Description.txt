@@ -1,0 +1,39 @@
+Fuel - Fuel Type
+Fire_Size_kW - Fire Size in kW
+Fuel_Flow_Time_s - Time fuel flowed into the compartment in s 
+Prob_L - probability of a backdraft occuring with a low spark position
+Prob_M - probability of a backdraft occuring with a mid spark position
+Ig_Time_D_L - average ignition time for a door/low spark configuration determined from the duration of when the door opens to observed ignition in s
+Ig_Time_D_M - average ignition time for a door/mid spark configuration determined from the duration of when the door opens to observed ignition in s
+Ig_Time_W_L - average ignition time for a window/low spark configuration determined from the duration of when the door opens to observed ignition in s
+Ig_Time_W_M - average ignition time for a window/mid spark configuration determined from the duration of when the door opens to observed ignition in s
+THR_kJ_D_L - average total heat release for a door/low spark configuration
+THR_kJ_D_M - average total heat release for a door/mid spark configuration
+THR_kJ_W_L - average total heat release for a window/low spark configuration
+THR_kJ_W_M - average total heat release for a window/low spark configuration
+Est_GC_time_D_L - estimated gravity current velocity from Froude number calculation for a door/low spark configuration
+Est_GC_time_D_M - estimated gravity current velocity from Froude number calculation for a door/mid spark configuration
+Est_GC_time_W_L - estimated gravity current velocity from Froude number calculation for a window/low spark configuration
+Est_GC_time_W_M - estimated gravity current velocity from Froude number calculation for a window/mid spark configuration
+Total_Fuel_ Mass_Fraction - Total mass fraction of fuel residing within the enclosure before the door opens 
+Total_Mass (g) - Total mass residing within the enclosure before the door opens in g
+Upper_Temperature_C - Averaged temperature in the enclosure upper zone before the door opens in C
+Upper_X_Fuel - Averaged fuel fraction in the enclosure upper zone before the door opens in vol/vol
+Upper_X_O2 - Averaged oxygen fraction in the enclosure upper zone before the door opens in vol/vol
+Upper_X_CO2 - Averaged carbon dioxide fraction in the enclosure upper zone before the door opens in vol/vol
+Upper_X_CO - Averaged carbon monoxide fraction in the enclosure upper zone before the door opens in vol/vol
+Upper_X_H2O - Averaged water vapor fraction in the enclosure upper zone before the door opens in vol/vol
+Upper_X_N2 - Averaged nitrogen fraction in the enclosure upper zone before the door opens in vol/vol
+Lower_Temperature_C - Averaged temperature in the enclosure lower zone before the door opens in C
+Lower_X_Fuel - Averaged fuel fraction in the enclosure lower zone before the door opens in vol/vol
+Lower_X_O2 - Averaged oxygen fraction in the enclosure lower zone before the door opens in vol/vol
+Lower_X_CO2 - Averaged carbon dioxide fraction in the enclosure lower zone before the door opens in vol/vol
+Lower_X_CO - Averaged carbon monoxide fraction in the enclosure lower zone before the door opens in vol/vol
+Lower_X_H2O - Averaged water vapor fraction in the enclosure lower zone before the door opens in vol/vol
+Lower_X_N2 - Averaged nitrogen fraction in the enclosure lower zone before the door opens in vol/vol
+m_f_g - Mass of fuel residing within the enclosure before the door opens in g
+CE_F_kJ - Chemical energy of fuel residing within the enclosure before the door opens in kJ
+u_m_f_g - Uncertainty of the mass of fuel residing within the enclosure before the door opens in g
+u_CE_F_kJ - Uncertainty of the chemical energy of fuel residing within the enclosure before the door opens in KJ
+h_GC_cm_D - height of gravity current with door configuration in cm
+h_GC_cm_W - height of gravity current with window configuration in cm
