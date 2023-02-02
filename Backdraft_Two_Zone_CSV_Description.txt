@@ -37,3 +37,11 @@ u_m_f_g - Uncertainty of the mass of fuel residing within the enclosure before t
 u_CE_F_kJ - Uncertainty of the chemical energy of fuel residing within the enclosure before the door opens in KJ
 h_GC_cm_D - height of gravity current with door configuration in cm
 h_GC_cm_W - height of gravity current with window configuration in cm
+Flame_Exit_s_D_L - Duration from when door opens to flame exists with door in seconds, low spark configuration
+Flame_Exit_s_D_M - Duration from when door opens to flame exists with door in seconds, mid spark configuration
+Flame_Exit_s_W_L - Duration from when door opens to flame exists with window in seconds, low spark configuration
+Flame_Exit_s_W_M - Duration from when door opens to flame exists with window in seconds, mid spark configuration
+u_Flame_Exit_s_D_L - Uncertainty of duration from when door opens to flame exists with door in seconds, low spark configuration
+u_Flame_Exit_s_D_M - Uncertainty of duration from when door opens to flame exists with door in seconds, mid spark configuration
+u_Flame_Exit_s_W_L - Uncertainty of duration from when door opens to flame exists with window in seconds, low spark configuration
+u_Flame_Exit_s_W_M - Uncertainty of duration from when door opens to flame exists with window in seconds, mid spark configuration
