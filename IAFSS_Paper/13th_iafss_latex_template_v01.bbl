@@ -1,0 +1,145 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{fleischmann2013defining}
+C.~M. Fleischmann, Z.~Chen, Defining the difference between backdraft and smoke
+  explosions, Procedia Engineering 62 (2013) 324--330.
+
+\bibitem{fleischmann1993backdraft}
+C.~Fleischmann, \emph{Backdraft phenomena}, Ph.D. thesis, University of
+  California, Berkeley, Berkeley, USA (1993).
+
+\bibitem{fleischmann1994quantitative}
+C.~Fleischmann, P.~Pagni, R.~Williamson, Quantitative backdraft experiments,
+  in: Fire Safety Science-Proceedings of the Fourth International Symposium,
+  1994, pp. 337--348.
+
+\bibitem{gottuk1999development}
+D.~Gottuk, M.~Peatross, J.~Farley, F.~Williams, The development and mitigation
+  of backdraft: a real-scale shipboard study, Fire Safety Journal 33~(4) (1999)
+  261--282.
+
+\bibitem{wu2011experimental}
+J.~Wu, Y.~Zhang, X.~Gou, M.~Yan, E.~Wang, L.~Liu, Experimental research on gas
+  fire backdraft phenomenon, Procedia Environmental Sciences 11 (2011)
+  1542--1549.
+
+\bibitem{hayasaka2008backdraft}
+H.~Hayasaka, Y.~Kudo, H.~Kojima, T.~Hashigami, J.~Ito, T.~Ueda, Backdraft
+  experiments in a small compartment, in: Progress in Scale Modeling: Summary
+  of the First International Symposium on Scale Modeling (ISSM I in 1988) and
+  Selected Papers from Subsequent Symposia (ISSM II in 1997 through ISSM V in
+  2006), Springer, 2008, pp. 313--324.
+
+\bibitem{tsai2013full}
+L.~Tsai, C.~Chiu, Full-scale experimental studies for backdraft using solid
+  materials, Process Safety and Environmental Protection 91~(3) (2013)
+  202--212.
+
+\bibitem{zhao2021experimental}
+J.~Zhao, Y.~Li, J.~Li, Y.~Huang, J.~Wu, Experimental study on the backdraft
+  phenomenon of solid fuel, Plos one 16~(8) (2021) e0255572.
+
+\bibitem{weng2005prediction}
+W.~Weng, W.~Fan, Y.~Hasemi, Prediction of the formation of backdraft in a
+  compartment based on large eddy simulation, Engineering Computations 22~(4)
+  (2005) 376--392.
+
+\bibitem{ferraris2008large}
+S.~Ferraris, J.~Wen, S.~Dembele, Large eddy simulation of the backdraft
+  phenomenon, Fire Safety Journal 43~(3) (2008) 205--225.
+
+\bibitem{park2017computational}
+J.~Park, C.~Oh, Y.~Han, K.~Do, Computational study of backdraft dynamics and
+  the effects of initial conditions in a compartment, Journal of Mechanical
+  Science and Technology 31~(2) (2017) 985--993.
+
+\bibitem{ashok2021numerical}
+S.~G. Ashok, T.~Echekki, A numerical study of backdraft phenomena under normal
+  and reduced gravity, Fire Safety Journal 121 (2021) 103270.
+
+\bibitem{myilsamy2019large}
+D.~Myilsamy, C.~B. Oh, B.-I. Choi, Large eddy simulation of the backdraft
+  dynamics in compartments with different opening geometries, Journal of
+  Mechanical Science and Technology 33 (2019) 2189--2201.
+
+\bibitem{Falkenstein2022}
+R.~Falkenstein-Smith, T.~Cleary, {Thermal and gas mixture composition
+  measurements preceding backdrafts in a 2/5\textsuperscript{th} scale
+  compartment}, NIST Technical Note 2185, National Institute of Standards and
+  Technology (2022).
+
+\bibitem{babrauskas1994phi}
+V.~Babrauskas, W.~Parker, G.~Mulholland, W.~Twilley, The phi meter: A simple,
+  fuel-independent instrument for monitoring combustion equivalence ratio,
+  Review of Scientific Instruments 65~(7) (1994) 2367--2375.
+
+\bibitem{Falkenstein2021a}
+R.~Falkenstein-Smith, T.~Cleary, {The Design and Performance of a
+  Second-Generation Phi Meter}, NIST Technical Note 2184, National Institute of
+  Standards and Technology (2021).
+
+\bibitem{Brown2022}
+C.~Brown, R.~Falkenstein-Smith, T.~Cleary, {Reduced-Scale Compartment Gaseous
+  Fuels Backdraft Experiments}, NIST Technical Note 2183, National Institute of
+  Standards and Technology (2021).
+
+\bibitem{Hurley2016}
+M.~Hurley (Ed.), SFPE Handbook of Fire Protection Engineering, 5th Edition,
+  Springer, New York, 2016.
+
+\bibitem{Magnussen:1}
+B.~Magnussen, B.~Hjertager, {On Mathematical Modeling of Turbulent Combustion
+  with Special Emphasis on Soot Formation and Combustion}, in: Proceedings of
+  the Sixteenth Symposium (International) on Combustion, Combustion Institute,
+  Pittsburgh, Pennsylvania, 1977, pp. 719--729.
+
+\bibitem{FDS_Tech_Guide}
+K.~McGrattan, S.~Hostikka, R.~McDermott, J.~Floyd, C.~Weinschenk, K.~Overholt,
+  {Fire Dynamics Simulator, Technical Reference Guide}, National Institute of
+  Standards and Technology, Gaithersburg, Maryland, USA, and VTT Technical
+  Research Centre of Finland, Espoo, Finland, sixth Edition, vol.~1:
+  Mathematical Model; Vol.~2: Verification Guide; Vol.~3: Validation Guide;
+  Vol.~4: Software Quality Assurance (September 2013).
+
+\bibitem{SFPE:Beyler}
+C.~Beyler, SFPE Handbook of Fire Protection Engineering, 5th Edition, Springer,
+  New York, 2016, Ch. Flammability Limits of Premixed and Diffusion Flames.
+
+\bibitem{Pitts:1995}
+W.~Pitts, {The Global Equivalence Ratio Concept and the Formation Mechanisms of
+  Carbon Monoxide in Enclosure Fires}, Progress in Energy and Combustion
+  Science 21 (1995) 197--237.
+
+\bibitem{Bundy:1}
+M.~Bundy, A.~Hamins, E.~Johnsson, S.~Kim, G.~Ko, D.~Lenhert, {Measurements of
+  Heat and Combustion Products in Reduced-Scale Ventilation-Limited Compartment
+  Fires}, NIST Technical Note 1483, National Institute of Standards and
+  Technology, Gaithersburg, Maryland (2007).
+
+\bibitem{Smokeview_Users_Guide}
+G.~Forney, {Smokeview, A Tool for Visualizing Fire Dynamics Simulation Data,
+  Volume I: User's Guide}, National Institute of Standards and Technology,
+  Gaithersburg, Maryland, USA, sixth Edition (May 2013).
+
+\bibitem{FDS_Users_Guide}
+K.~McGrattan, S.~Hostikka, R.~McDermott, J.~Floyd, C.~Weinschenk, K.~Overholt,
+  {Fire Dynamics Simulator, User's Guide}, National Institute of Standards and
+  Technology, Gaithersburg, Maryland, USA, and VTT Technical Research Centre of
+  Finland, Espoo, Finland, sixth Edition (September 2013).
+
+\bibitem{SFPE:Tewarson}
+M.~Khan, A.~Tewarson, M.~Chaos, SFPE Handbook of Fire Protection Engineering,
+  5th Edition, Springer, New York, 2016, Ch. {Combustion Characteristics of
+  Materials and Generation of Fire Products}.
+
+\bibitem{White:2017}
+J.~P. White, S.~Vilfayeau, A.~W. Marshall, A.~C. Trouv\'e, R.~J. McDermott,
+  Modeling flame extinction and reignition in large eddy simulations with fast
+  chemistry, Fire Safety Journal 90 (2017) 72--85.
+
+\end{thebibliography}
