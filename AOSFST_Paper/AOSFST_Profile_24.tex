@@ -1,0 +1,101 @@
+\documentclass[12pt,letterpaper]{article}
+
+%==================================================================================
+% Template for the 13th International Association of Fire Safety Science (2019).  
+%==================================================================================
+
+% This template is based on the layout requirements of the Fire Safety Journal.  When submitting, please do include the *.tex and output (typeset) *.pdf files, figure files (photographs, diagrams, etc.), and any other ancillary files required to typeset your article.  The journal must be able to typeset your article with what you've provided.
+
+% As with any programming language, there are multiple ways of executing any given task (e.g., figures, tables, maths, etc.).  The syntax in this template should be considered suggestions and not directives.  Please feel free to use your own favorite syntax, especially if it's more elegant than what is found below!  That said, the spacing and font parameters have been selected to conform to the appearance dictated by the journal (i.e. like MS Word).  Make sure your final typeset document has the correct formatting or it will be rejected.
+
+% Required Packages ===============================================================
+\usepackage{amsmath} % The usual maths package
+\usepackage{amsfonts}  % The usual maths package
+\usepackage{amssymb}  % The usual maths package
+\usepackage[final]{graphicx} %Required for figures.
+\usepackage{footnote}
+\usepackage{footmisc}
+\usepackage{caption} % Needed to modify default figure captions
+\usepackage{latexsym}
+\usepackage{lineno} % Enables line numbers
+\usepackage{parskip} % Makes a space between paragraphs like MS word
+\usepackage{fullpage} % Overrides article margins
+\usepackage{titlesec} % Enables modification of section labels
+\usepackage[numbers,sort&compress]{natbib}
+%\usepackage[numbib]{tocbibind} %Make References a numbered section
+\usepackage{siunitx} % Formats the units and values
+\usepackage{times}
+\usepackage{chemformula}
+
+
+%\usepackage{subcaption} % Enables multiple images in one figure environment
+%\usepackage{xcolor} % For various font colors in figures
+%===================================================================================
+
+% The next two lines modify the font and font size of the section and subsection labels
+\titleformat{\section}{\normalfont\bfseries}{\thesection}{0.2em.}{}
+\titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{0.2em}{}
+
+% This will change the figure captions from the default "Figure 1:" to "Fig. 1."
+\captionsetup[figure]{labelformat={default},labelsep=period,name={Fig.}}
+
+\linenumbers % Include line numbers throughout document
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\begin{document} %====================================================================
+\begin{flushleft} % Suppress the default full justification of text
+
+% Title of your article
+\textbf{}
+\vspace{3mm}\\
+%
+% Author(s)
+Marcos Vanella$^\text{a*}$, Chandan Paul$^\text{a}$, and Ryan Falkenstein-Smith$^\text{a}$,
+\vspace{3mm}\\	
+
+% Affiliation "b"
+$^\text{a}$National Institute of Standards and Technology, 100 Bureau Drive, MS 8661, Gaithersburg, USA  \\
+marcos.vanella@nist.gov
+\vspace{3mm}
+
+$^*$Corresponding author
+
+% Highlights/keywords ===================================================
+%\textbf{Highlights:}	
+%\begin{itemize}
+%	\itemsep-4pt % Override default vertical spacing among list items
+%	\item A series of backdraft experiments were conducted in a reduced-scale enclosure
+%	\item Different methane and propane fire configurations were implemented to vary the gas mixture distribution and internal density
+%	\item The gas mixture density within the enclosure was observed to impact the mixing dynamics of the gravity current as it entered the compartment
+%	\item Ignition was achieved for rich gas mixtures surrounding a charged spark ignitor
+%	\item \textcolor{black}{A relationship between the total heat release of the resulting backdraft and the initial mass fraction of fuel residing within the enclosure was observed} for experiments utilizing propane
+%\end{itemize}
+%\vspace{3mm}
+
+% Abstract ==============================================================	
+\textbf{Abstract:}
+
+\vspace{3mm}
+
+
+\textbf{Keywords:}
+Enclosure Fire; Gaseous Fuels; Extinction; Phi-Meter; Mixture Fraction
+
+\section{Introduction} \addvspace{10pt}
+\label{sec:introduction}
+
+\section{Experimental Setup} \addvspace{10pt}
+
+\section{Results and Discussion} \addvspace{10pt}
+
+\section{Conclusion} \addvspace{10pt}
+\label{sec:conc}
+
+ 
+
+%\section*{References}
+%\bibliographystyle{elsarticle-num}
+%\bibliography{References}
+%\end{flushleft}
+%\end{document}
