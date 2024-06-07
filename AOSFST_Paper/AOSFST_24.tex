@@ -47,19 +47,19 @@
 \begin{flushleft} % Suppress the default full justification of text
 
 % Title of your article
-\textbf{Examining self-extinction of diffusion flames in an isolated compartment}
+\textbf{A study on local conditions conducive to deflagration in a scaled compartment}
 \vspace{3mm}\\
 %
 % Author(s)
-Ryan Falkenstein-Smith$^\text{a*}$, Thomas Cleary$^\text{a}$
+Marcos Vanella$^\text{a*}$, Chandan Paul$^\text{a,b}$, Thomas Cleary$^\text{a}$, Ryan Falkenstein-Smith$^\text{a}$
 \vspace{3mm}\\	
 
 % Affiliation "b"
-$^\text{a}$National Institute of Standards and Technology, 100 Bureau Drive, MS 8661, Gaithersburg, USA  \\
-ryan.falkenstein-smith@nist.gov
+$^\text{a}$National Institute of Standards and Technology, 100 Bureau Drive, Gaithersburg, USA  \\
+$^\text{b}$The George Washington University, 800 22nd Street, NW, Washington DC, USA  \\
 \vspace{3mm}
 
-$^*$Corresponding author
+$^*$Corresponding author : marcos.vanella@nist.gov
 
 % Highlights/keywords ===================================================
 %\textbf{Highlights:}	
@@ -80,171 +80,46 @@ $^*$Corresponding author
 
 
 \textbf{Keywords:}
-Enclosure Fire; Gaseous Fuels; Extinction; Phi-Meter; Mixture Fraction
+Enclosure Fire; Gaseous Fuels; Backdraft; Experiments; Numerical Simulation
 
 \section{Introduction} \addvspace{10pt}
 \label{sec:introduction}
-Ventilation is a critical factor of the structure and dynamics of a diffusion flame. In general, a diffusion flame cannot exist in the absence of air. The question then arises: how much air is required before extinction of diffusion flame occurs?
 
-Several works have studied diffusion flame self-extinction within an enclosure by analyzing the positioning and size of compartment vents~\cite{chao1991structure,chen2016investigation,chen2013analysis,he2015ventilation,he2013vent,lecoustre2011local,sun2021experimental,utiskul2005compartment,vilfayeau2015numerical,yu2020numerical,yuan2013analysis}. 
-Other works~\cite{chow1995studies,nikitin1999self,chow2009numerical,chow2009numerical2,zhang2013self}, motivated by an effort to mitigate flame spread for ship fires, have examined diffusion flame structure and extinction in a closed compartment, where an enclosure's ventilation consists only of leakage points or a small opening. Beyler~\cite{beyler1991analysis} developed a prediction model for self-extinction under the assumption of steady-state burning and evenly distributed oxygen throughout the enclosure. Bailey~\cite{bailey1993methanol} observed that mass loss rate for a methanol pool fire decreased with oxygen depletion and self-extinguished at approximately 12\%, slightly above the limiting oxygen concentration (11.1~\%). Quinteire et al.~\cite{quintiere2004theory} and Utiskul et al.~\cite{utiskul2005compartment} highlighted the influence of heat feedback to pool surface on the burning rate of a pool fire is another critical factor the extinction of a flame.  
 
-In this work, self-extinction of a propane diffusion flame is studied by examining its structure in an isolated compartment. Ventilation within enclosure is characterized via the global equivalence ratio measured using a second-generation phi meter~\cite{Falkenstein2021phimeter,babrauskas1994phi}. The use of a gaseous pool fire, as oppose to using a liquid fuel as seen in past works, eliminates the variability of the burning rate due to heat feedback to the pool surface. Under this approach, this work aims to establish a criteria for determining self-extinction of a diffusion flame.  
 
 \section{Experimental Setup} \addvspace{10pt}
-\subsection{Reduced-scale enclosure} \addvspace{10pt}
-All experiments were conducted in a reduced-scale enclosure, approximately 1.0~m~x~1.0~m~x~1.5~m in size. Fig.~\ref{fig:Backdraft_experimental_setup} provides a schematic of the compartment equipped with a heat flux gauge (HFG) and gas sampling probes at different locations. The heat flux gauge was position in the center of the compartment floor, nominally 35.5~cm away from the compartment door. The front of the compartment featured an approximately 80.0~cm high, 43.0~cm wide opening with a pneumatic door controlled via a data acquisition system (DAQ). The enclosure housed a square sand burner with a 17.8 cm side length, centered approximately 1.25 m away from the compartment opening. The compartment was fitted with a borescope oriented such that the internal flame could be observed for the entire duration of the experiment.
-\begin{figure}[!]
-	\centering
-\includegraphics[width=225pt, keepaspectratio]{Experimental_Setup_9.png}
-	\caption{Schematic of the $2/5^{\rm{th}}$ scale compartment utilized for the backdraft experiments.}
-	\label{fig:Backdraft_experimental_setup}
-\end{figure}
-Experiments were initiated when the burner was ignited using an extended propane wand. Fuel flow into the burner was controlled using a mass flow controller (MFC) stationed underneath the compartment. Once ignited, the fuel flow was adjusted to a predetermined fire size which was allowed to burn with the compartment door open for approximately 60~s, where afterwards, the door was closed, making the enclosure nearly isolated.  Fire sizes used in this work included two propane fires of sizes 16.7~kW~$\pm$~1.0~kW and 25.0~kW~$\pm$~1.0~kW. Once the flame was observed to be extinguished via the borescope, the compartment was vented by opening the door. For the entire duration of the experiment, all measurements were recorded at 1.0~Hz using a DAQ.
+\label{sec:expsetup}
 
-\subsection{Gas Sampling and Analysis} \addvspace{10pt}
-\label{ssec:Gas_Samp_Anal}
-Two sets of sampling locations were used to extract gas samples from the center of the compartment. The first set of gas sampling locations were approximately 49.5~cm and 90.0~cm from the compartment floor, and 37.5~cm from the compartment doorway. The second set of gas sampling positions were at the rear of the compartment with the higher location being approximately 95.0~cm from the compartment floor and 122~cm from the compartment doorway while the lower location was approximately 1~cm above the center of burner surface. For each experiment, only one gas sampling set was utilized.
+\subsection{Definition of Initial conditions} \addvspace{10pt}
+\label{sec:initcond}
 
-At each gas sampling location, the extracted gas samples were portioned into a gas analyzer and second-generation phi meter. The gas analyzer incorporated one paramagnetic and two nondispersive infrared sensors that measured the concentrations of oxygen, carbon monoxide, and carbon dioxide, respectively. Gas samples were dried before entering the gas analyzer using a chiller placed in an ice bath.
 
-The second-generation phi meter provided a local measurement of the global, $\phi_{\rm{G}}$, and local fuel, $\phi_{\rm{LF}}$, equivalence ratio. As documented in Ref.~\cite{}, the global equivalence ratio is defined by the mass ratio of uncombusted and combusted fuel and air, normalized by a stoichiometric ratio. The second-generation phi meter determines the global equivalence ratio  similarly to other designs by providing excess oxygen to completely combust residing fuel in the incoming sample. In contrast to previous designs, the second-generation phi meter includes a high-temperature mass flow controller (HTMFC) located directly behind the phi meter's reactor. The elevated temperature of the HTMFC prevents water vapor in the reactor's exhaust from condensing, thus maintain the total mass moving through the sampling line. The utility of the HTMFC is that it provides the mass of oxygen consumed in the total exhaust of the phi meter's reactor when combined with the oxygen concentration at the inlet. By knowing the oxygen consumed across the phi meter reactor, the local fuel equivalence ratio can be calculated without knowledge of the parent fuel composition. Additional details regarding the second-generation phi meter's design and functions is provided in Ref.~\cite{Falkenstein2021phimeter}.
+\subsection{Numerical Model} \addvspace{10pt}
+\label{sec:nummodel}
 
-\subsection{Mixture Fraction Calculation}
-\label{ssec:Mix_Frac_Calc}
-A mixture fraction analysis was performed using phi meter measurements obtained at different positions within the compartment while the fire was in isolation. In this work, the mixture fraction is defined as the mass fraction of species containing carbon, including soot, that originated from the fuel stream. Following Peter's definition~\cite{peters1984laminar}, mixture fraction, $Z$, can be defined as the following:
+- FDS Model Geometry - Spark locations - Initial conditions.
+- Layout of simulation set.
+- Grid sensitivity.
+- Defining conditions for flame propagation - Flammability diag/Cantera methodology.
 
-\begin{equation}\label{eq:Mixture_Fraction}
-  Z = {Y}_{\rm F} + \frac{W_{\rm F}}{\rm x} \sum_{i\ne {\rm F}} \frac{{Y}_i}{W_{i}}
-\end{equation}
-where $\bar{Y}_{\rm F}$, ${W_{\rm F}}$, and $\rm x$ are the mass fraction, molecular weight, and number of carbon atoms in the fuel molecule, respectively. The mass fraction and molecular weight of a given species is represented by ${Y}_i$ and ${W_{i}}$, respectively.    
-
-In the context of the phi meter, Eq.~\ref{eq:Mixture_Fraction} can be rewritten to account for total mass at the inlet of the phi meter, $m_{\rm{in}}$. 
-
-\begin{equation}\label{eq:Mixture_Fraction_2}
-  Z \left(\frac{m_{\rm{in}}\,{\rm x}}{W_{\rm F}}\right)= \frac{m_{\rm{F}}\,{\rm x}}{W_{\rm F}} + \sum_{i\ne {\rm F}} \frac{{m}_i}{W_{i}}
-\end{equation}
-Here, ${m}_i$ and $m_{\rm{F}}$ are the masses of given species and the parent fuel, respectively. 
-
-In the phi meter, all carbon containing species are converted to carbon dioxide, of which it's concentration is measured downstream of the reactor. Therefore, the right hand term in Eq.~\ref{} can be simplified to the total moles of carbon dioxide measured downstream in the phi meter, $n_{\rm{CO_2}}$. 
-
-\begin{equation}\label{eq:Mixture_Fraction_3}
- n_{\rm{CO_2}}= \frac{m_{\rm{F}}\,{\rm x}}{W_{\rm F}} + \sum_{i\ne {\rm F}} \frac{{m}_i}{W_{i}}=\frac{m_{\rm{ex}}\,{Y_{\rm{CO_2}}}}{W_{\rm CO_2}}
-\end{equation}
-The total mole of carbon dioxide generated from the phi meter can be determined from the product of the mass fraction of carbon dioxide $Y_{\rm{CO_{2},ex}}$ and total mass flow at the exhaust of the phi meter's reactor, $m_{\rm{ex}}$, over the molecular weight of carbon dioxide, ${W_{\rm CO_2}}$. 
-
-From a mass balance across the phi meter's reactor, the mass at the inlet of the phi meter can be calculated from the difference between mass flow at the reactor's exhaust and mass of excess oxygen added into the reactor, $m_{\rm{O_{2},Excess}}$. It should be noted, that $m_{\rm{ex}}$ can only be determined by using the HTMFC, emphasizing the value of the second-generation phi meter.
-
-\begin{equation}\label{eq:Mixture_Fraction_mass_bal}
-m_{\rm{in}}=m_{\rm{ex}}-m_{\rm{O_{2},Excess}}
-\end{equation}
-
-Through a combination of Eqs.~\ref{eq:Mixture_Fraction_2}-\ref{eq:Mixture_Fraction_mass_bal}, mixture fraction can be calculated in real-time using the equation below:
-\begin{equation}\label{eq:Mixture_Fraction_2}
-Z = \left(\frac{m_{\rm{ex}}}{m_{\rm{ex}}-m_{\rm{O_{2},Excess}}}\right)\frac{Y_{\rm{CO2}}\,{\rm x}\,W_{\rm F}}{W_{\rm CO_2}}
-\end{equation}
-In practice, the phi meter's mixture fraction measurement can only be performed by assuming values for the number of carbon atoms and molecular weight of the parent fuel.    
-
-The phi meter's mixture fraction measurements were validated from measurements made via gas chromatography analysis. In addition to the gas analyzer and phi meter gas sampling lines, a portion of the extracted gas sample, taken 60~s prior to venting the isolated compartment, was fed into stainless steel container. The contained gas sample was analyzed post-collection using an Agilent 5977E Series Gas Chromatograph with thermal conductivity and mass selectivity detectors (GC/MSD) to estimate time-averaged combustion product concentrations following the method described in Ref.~\cite{falkenstein2022calibration}. The time-averaged carbon containing species concentrations provided from the GC/MSD were used to calculate mixture fraction using Eq.~\ref{eq:Mixture_Fraction}.
-
-The time-averaged mixture fractions from the phi meter and GC/MSD are plotted against each other in Fig.~\ref{fig:Z_Val}. The time-averaged values determined from the phi meter were averaged over the extraction period of GC/MSD sample. When compared, the mixture fraction measurements obtained from both methods are complimentary, within experimental uncertainty. The general agreement between the results of the orthogonal techniques validates the phi meter's ability to measure mixture fraction in real-time. 
-
-\begin{figure}[h!]
-	\centering
-\includegraphics[width=200pt, keepaspectratio]{Z_Validation.pdf}
-	\caption[]{Comparison of time-averaged mixture fraction measurements obtained from a second-generation phi meter and gas chromatograph with thermal conductivity and mass selectivity detectors}
-	\label{fig:Z_Val}
-\end{figure}
-
-\subsection{Uncertainty Analysis} \addvspace{10pt}
-All uncertainties expressed in this work are calculated from a combined uncertainty with a coverage factor of 2, representing a 95\% confidence level. Time-averaged measurements were estimated from a combination of the Type A and B evaluation of uncertainty. The Type A evaluation of uncertainty was estimated from the variance of the averaged measurements. The Type B evaluation of uncertainty was determined from the reported instrumentation error. The uncertainty of calculated parameters was calculated from the law of propagation of uncertainty. The variance between the averaged measurements was determined to be the dominant contributor to the estimated uncertainty.
-
-\section{Results and Discussion} \addvspace{10pt}
+\subsection{Results} \addvspace{10pt}
 \label{sec:results}
-\subsection{Observed Flame Structure}
-\label{ssec:Structure}
-Figure~\ref{fig:Sequence} presents a sequence of images from an experiment utilizing a 25.0~kW propane fire. During a steady burn, as shown in the second subfigure to the left, the flame height remains steady suggesting adequate oxygen concentration levels within the compartment to maintain the flame structure. As the flame continues to burn in the isolated compartment, the flame begins to diminish, defined in this work as the "dimishing point". Eventually the flame structure is reduced to a small flame sheet with a relatively smaller flame height. The flame is then no longer observed on the burner surface, which is designated as extinction in this work. In some instances, ghosting flames are observed near the time of extinction, similarly observed in previous work~\cite{utiskul2005compartment}.
-\begin{figure}[h!]
-	\centering
-\includegraphics[width=390pt, keepaspectratio]{Sequence.png}
-	\caption{Sequence of images showing the ignition (left) and resulting extinction (right) of a 25.0~kW propane flame contained in an isolated enclosure.}
-	\label{fig:Sequence}
-\end{figure}
 
-\subsection{General trends leading to extinction}
-\label{ssec:Trends}
-The heat flux to the compartment floor was used a metric to determine the dimishing point of the flame structure. Figure~\ref{} provides a representation of the heat flux trend for all experiments. Initially, the heat flux to the compartment floor rises, indicating rising temperatures within the compartment. At some point, the heat flux to the compartment floor reaches a peak and slowly begins to diminish, suggesting that the thermal radiation generated from the flame is beginning to weaken. In some instances, near the time of extinction, there is a rapid spike in the heat flux, which can be attributed to a ghosting flame passing across the window of the heat flux gauge. 
-
-\begin{figure}[h!]
-	\centering
-\includegraphics[width=200pt, keepaspectratio]{Z_Validation.pdf}
-	\caption[]{Comparison of time-averaged mixture fraction measurements obtained from a second-generation phi meter and gas chromatograph with thermal conductivity and mass selectivity detectors}
-	\label{fig:Z_Val}
-\end{figure}
-
-An example of the global equivalence ratio measurement trends obtained in the upper and middle regions of the compartment as well as at the burner surface is shown in Fig.~\ref{}. For measurements taken in the upper and middle regions of the compartment, the global equivalence ratio begins to climb immediately after ignition, then rapidly increases as the flame continues to burn within the compartment. At the time of extinction, the global equivalence ratio slightly increases, which is attributed to the continuous flow of fuel into the compartment, after which it then levels off. In comparison to the global equivalence ratio measured in the middle region of the compartment, measured values in the upper region of the compartment are higher indicating more combustion products (e.g., carbon dioxide, carbon monoxide, and unburned fuel) residing near the compartment ceiling.At the burner surface, the global equivalence ratio steadily rises after ignition, then peaks between the diminishing point and time of extinction, followed by a rapid decline. 
-
-The rate at which the global equivalence ratio changes while the flame is isolated in the compartment gives insight into the influence of ventilation within the compartment on the flame's structure. Figure~\ref{} presents the rate of change for $\phi_{G}$ at the different sampling locations within the isolated enclosure. When looking at the rate of change of $\phi_{G}$ as a function of time in the upper and middle regions of the compartment, the peak rate of change is observed to occur approximately at the diminishing point. Since the fuel flow rate is constant, the peak rate of change for $\phi_{G}$ can be explained by the diminishing oxygen available for combustion, weakening the flame structure and slowing the growth rate of combustion products within the enclosure.
-
-Figure~\ref{fig:Dim_plot} demonstrate the consistent relationship between the peak rate of change for $\phi_{G}$ estimated in the upper and middle regions of the compartment and the diminishing point. The dotted line represents a line of unity when the diminishing point is equivalent to the peak rate of change for $\phi_{G}$. The plots at both positions and propane fire sizes follow the unity slope, demonstrating a correlation between $\phi_{G}$ and the flame structure within an enclosed environment.
-\begin{figure}[!]
-	\centering
-\includegraphics[width=175pt, keepaspectratio]{Diminishing_Data.pdf}
-	\caption{A comparison between the time the flame structure was observed to diminish via the peak heat flux and the time of the peak rate of change for $\phi_{G}$. The uncertainty of observed time is estimated to be 4~s, assuming a 95\% confidence interval with a coverage factor of 2.}
-	\label{fig:Dim_plot}
-\end{figure}
-
-In contrast to other sampling positions, the rate of change for $\phi_{G}$ does not peak at the diminishing point. Instead, a global maximum is achieved prior the diminishing point. The rate of change of $\phi_{G}$ then declines to a negative value before reaching a global minimum at the time of extinction, upon which afterwards it begins to steadily rise to 0. The decline rate of change for $\phi_{G}$ indicates a slower combustion near the fuels surface. The negative rate of change for $\phi_{G}$ represents a decline in the overall global equivalence ratio at the fuel surface. 
-
-For all experiments in which $\phi_{G}$ was measured at the fuel surface, the global minimum of the rate of change of $\phi_{G}$ was found to correlate to the extinction time, as shown in Fig.~\ref{fig:Ext_plot}. Similarly to Fig.~\ref{fig:Dim_plot}, the dotted line represents a line of unity when the flame self-extinction point is equivalent to the global minimum rate of change for $\phi_{G}$ measured at the burner surface. The consistent correlation between extinction time and global minimum rate of change for $\phi_{G}$ demonstrate a technique to establish extinction of diffusion flame without visual observation. 
-\begin{figure}[!]
-	\centering
-\includegraphics[width=175pt, keepaspectratio]{Extinction_Data.pdf}
-	\caption{A comparison between the observed time the flame self-extinguished within the compartment and the global minimum rate of change for $\phi_{G}$ at the burner surface. The uncertainty of observed time is estimated to be 4~s, assuming a 95\% confidence interval with a coverage factor of 2.}
-	\label{fig:Ext_plot}
-\end{figure}
-
-\subsection{Mixture Fraction Analysis}
-\label{ssec:Mix_Frac_Anal}
-Figures~\ref{fig:mix_plot_25} and \ref{fig:mix_plot_16p7} present mass fractions of major combustion products as a function of mixture fraction while the propane diffusion flame remained in isolation. The local fuel equivalence ratio and gas concentration measurements obtained from the second-generation phi meters and gas analyzers were used to calculate the mass fractions of fuel and water Eq.~\ref{eq:gas concentrations}.
-\begin{equation}
-\label{eq:gas concentrations}
-X_f=\frac{\phi_{\rm{LF}}~X_{O_2}}{x+\frac{y}{4}} \quad ; \quad X_{H_2O}=\frac{y~(X_{CO_2}+X_{CO})}{2~x}
-\end{equation}
-Here $x$ and $y$ represent the number of carbon and hydrogen atoms in the parent fuel. The concentration of unburned fuel, $X_f$, was determined using the local fuel equivalence ratio, $\phi_{\rm{LF}}$, and oxygen concentration, $X_{O_2}$ measured in the phi meter and gas analyzer, and assuming the stoichiometric coefficient to be that of the parent fuel. The concentration of water vapor, $X_{H_2O}$, was approximated from a combination of the carbon dioxide, $X_{CO_2}$ and carbon monoxide $X_{CO}$ measurements obtained in the gas analyzer and the assumed carbon-to-hydrogen atom ratio of the parent fuel. The remainder of the gas mixture was assumed to be inert. 
-\begin{figure}[!]
-	\centering
-\includegraphics[width=\textwidth, keepaspectratio]{Mixture_Fraction_Propane_25.pdf}
-	\caption{}
-	\label{fig:mix_plot_25}
-\end{figure}
-
-\begin{figure}[!]
-	\centering
-\includegraphics[width=\textwidth, keepaspectratio]{Mixture_Fraction_Propane_16p7.pdf}
-	\caption{}
-	\label{fig:mix_plot_16p7}
-\end{figure}
-
-The solid line in Figs.~\ref{fig:mix_plot_25} and \ref{fig:mix_plot_16p7} represent the ideal mass fractions of combustion products obtained from Eq.~\ref{eq:Ideal_rxn}. Assuming ideal (i.e. no CO or soot), infinitely-fast (fuel and oxygen from the air cannot co-exist) combustion, the mass fractions of all species can be expressed as piece-wise linear ``state relations'' according to the following reaction:
-\begin{align*}
-{\rm C}_{\rm x}{\rm H}_{\rm y}{\rm O}_{\rm z} & +\eta(\rm x+\frac{\rm y}{4}-\frac{\rm z}{2})~({\rm O}_{2}+3.76~{\rm N}_{2}+0.0445~{\rm Ar}) \rightarrow  \\
-          & \max(0,1-\eta)~{\rm C}_{\rm x}{\rm H}_{\rm y}{\rm O}_{\rm z}+\max(0,1-\eta)~(\rm x+\frac{\rm y}{4}-\frac{\rm z}{2})~{\rm O}_{2}+ \min(1,\eta)~\rm x~{\rm CO}_{2} +  \\
-          & \min(1,\eta)~\frac{\rm y}{2}~{\rm H}_{2}{\rm O}+\eta(\rm x+\frac{\rm y}{4}-\frac{\rm z}{2})~(3.76~{\rm N}_{2}+0.0445~{\rm Ar})  \numberthis \label{eq:Ideal_rxn}
-\end{align*}
-The parameter $\eta$ is the reciprocal of the local fuel equivalence ratio, $\phi$,
-\begin{equation}\label{eq:Eta}
-\phi_{\rm{LF}}=\frac{1}{\eta}
-\end{equation}  
-
-At all sampling locations, the general changes in mass fraction of combustion products for the 16.7~kW and 25.0~kW propane fires are nearly consistent. In the upper and middle regions of the compartment, after ignition, the the mass fraction of all combustion products follow the ideal state relation. At the diminishing point the mass fraction of oxygen, carbon dioxide, and water vapor in the upper and middle regions of the compartment begins to level off, diverging away from ideal state relation, while the mass fraction of fuel steadily increases. The contrast of the combustion products compared to the ideal state relation explains the global maximum of the rate of change for $\phi_{G}$ since the rate combustion is beginning to slow due to lack of oxygen, resulting in a higher fuel concentration within the compartment. At the time of extinction, the mixture fraction begins to decrease with the mass fraction of combustion products assuming similar values observed after the diminishing point.   
-
-At the burner surface, the changes in mass fraction of combustion products in relation mixture fraction varies significantly from the other sampling locations. Once the compartment becomes isolated, the mass fraction of all combustion products diverges away from the ideal-state relation with the fuel mass fraction beginning to steadily rise inversely with the mass fraction of oxygen. Other combustion products, such as carbon dioxide, carbon monoxide and water vapor, are observed to be at a constant value as the mixture fraction increases. At extinction, the mixture fraction determined at the burner surface begins to decline, as observed similarly in other sampling locations. Looking back at Fig~\ref{}, the global minimum observed to occur with the extinction time can be explained by examining the mass fraction of fuel, which declines rapidly at the after extinction due to the fast increase of oxygen flowing into the same region. 
+\subsection{Effect of compartment fuel loading}
+\label{sec:resfuel}
 
 
+\subsection{Effect of compartment oxygen content}
+\label{sec:resfuel}
 
-\section{Conclusion} \addvspace{10pt}
-\label{sec:conc}
+
+\subsection{Effect of compartment Temperature profile?}
+\label{sec:restemp}
+
+
+\section{Conclusions}
+
+
 
  
 
