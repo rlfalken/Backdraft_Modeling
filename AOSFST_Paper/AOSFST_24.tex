@@ -85,7 +85,11 @@ Enclosure Fire; Gaseous Fuels; Backdraft; Experiments; Numerical Simulation
 \section{Introduction} \addvspace{10pt}
 \label{sec:introduction}
 
+Backdraft - what it is, lit review. Local conditions conducive to flame propagation within the compartment. Mixing, critical fuel mass.
 
+- Simulations, lit review, 2-3 equation kinetics for combustion, arrhenius vs fast chemistry.
+
+- Purpose of this work - study flame propagation potential comparing to experiments done at NIST. We are talking about deflagration initiation with spherical flame with diameter up to several centimeters. In this scenario fully mixed fuel and oxygen can be assumed. Other than that, the flame will move into regions where combustion can be mixing controlled (into the gravity current) and pressure generation affects the dynamics of the compartment ejecting fuel, oxygen and products through the door. What affects the flame viability? Do profiles of temperature, fuel, initial Oxygen with height have an effect? 
 
 \section{Experimental Setup} \addvspace{10pt}
 \label{sec:expsetup}
@@ -97,10 +101,37 @@ Enclosure Fire; Gaseous Fuels; Backdraft; Experiments; Numerical Simulation
 \subsection{Numerical Model} \addvspace{10pt}
 \label{sec:nummodel}
 
-- FDS Model Geometry - Spark locations - Initial conditions.
+\textbf{- FDS Model Geometry - Spark locations - Initial conditions.
 - Layout of simulation set.
-- Grid sensitivity.
-- Defining conditions for flame propagation - Flammability diag/Cantera methodology.
+- Grid sensitivity.}
+
+In order to simulate the gravity current incursion and record composition and temperature values with time in designated positions within the compartment we defined a model and used FDS (FDS-6.9.1, commit \textit{7e7cd3b} source code from May $21^{st}$, 2024) in large eddy simulation (LES) mode. The compartment and burner geometries were specified together with devices to sample composition and temperature in and around the ignitor locations used in experiments. Different initial conditions as described in the previous section were used with the compartment in open door configuration to simulate the cold air flow into it and gravity current development. The flow domain was optimized to record the flow of air and species within the compartment and across the compartment door as seen in Figure~\ref{}a. 
+
+
+Three grid resolutions were used to evaluate grid sensitivity. These employed cell sizes $\Delta x=0.25$ cm, $\Delta x=0.5$ cm and $\Delta x=1$ cm. For $\Delta x=1$ cm, the domain was split in 304 meshes with $(28\times32\times26)$ cells. For the cases $\Delta x=0.5$ cm and $\Delta x=0.25$ cm, 608 $(56\times32\times52)$ and 2432 $(56\times64\times52)$ meshes were used respectively. All cases were run for 8 s of simulation time in the Frontera supercomputer~\cite{}, an amount of time deemed sufficient to effectively deplete the fuel in compartment. It took from 30 minutes to 16 hours to complete these calculations (wall time). Parallelization was based on using one mesh per MPI rank, and one MPI rank per CPU core. Therefore, up to 2432 cores were used in the machine. A slice of oxygen volume fraction depicting the gravity current after door opening for the finest grid resolution is shown in Figure~\ref{}b.   
+
+% Figure: a) 304 mesh setup b) Oxygen volume fraction at 1.X sec after door opening:
+
+
+Global measures of grid sensitivity chosen are total fuel mass in the compartment and total oxygen mass in the compartment at half the simulation time t=4 s, as well as fuel mass flow through the door and average gravity current height. These give a good perspective on the mean composition in the compartment with time as well as the fluid mechanics resolution. Values for these quantities and differences respect to the finest  $\Delta x=0.25$ grid solution are provided in Table~\ref{} for initial composition and temperature conditions gathered from the FFT=300s experiments.
+
+% Table of global sensitivity measures and error:
+
+
+
+
+Two ignitor locations were defined as low-ignitor (LI) and mid-ignitor (MI). The first was defined in the symmety plane of the compartment at about 1 m from the door and 25 cm from the floor. The latter was defined also at 1 m from the door but at mid height of the compartment. Star clusters of 7 sampling devices were defined to note mixture composition and temperature at each ignito location, and at 2 cm in every coordinate direction around it, as shown in Figure~\ref{}a.
+In Figure~\ref{}b local fuel and oxygen variations with time are shown at the LI location for FFT=300s and different grid resolutions. We noted on this case and others, for both LI, MI locations there was no significant difference in gas composition and temperature among the different mesh resolutions. Therefore, the analysis presented on this work is based on 1 cm grid resolution calculations.
+
+% Figure: a) 7 point stencil of devices aroun LI ignitor location, b) LI location 300s FFT LI,MI fuel and oxygen volume fraction with time.
+
+
+\textbf{- Defining conditions for flame propagation - Flammability diag/Cantera methodology.}
+
+
+
+
+
 
 \subsection{Results} \addvspace{10pt}
 \label{sec:results}
